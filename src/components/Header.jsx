@@ -28,7 +28,7 @@ const Logo = styled.h1`
   letter-spacing: -0.3px;
   display: flex;
   align-items: center;
-  font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
   
   .jackfruit {
     color: transparent;
@@ -171,12 +171,12 @@ function Header() {
           {isMenuOpen ? '✕' : '☰'}
         </MenuButton>
         <NavLinks isOpen={isMenuOpen}>
-          <li><NavLink to="about" smooth={true} duration={500} onClick={closeMenu}>About</NavLink></li>
-          <li><NavLink to="usage" smooth={true} duration={500} onClick={closeMenu}>Usage</NavLink></li>
-          <li><NavLink to="process" smooth={true} duration={500} onClick={closeMenu}>Process</NavLink></li>
-          <li><NavLink to="age-benefits" smooth={true} duration={500} onClick={closeMenu}>Benefits</NavLink></li>
-          <li><NavLink to="contact" smooth={true} duration={500} onClick={closeMenu}>Contact</NavLink></li>
-          <li><NavLink to="news" smooth={true} duration={500} onClick={closeMenu}>News</NavLink></li>
+          <li><NavLink to="about" smooth={true} duration={350} offset={-80} delay={0} onClick={closeMenu}>About</NavLink></li>
+          <li><NavLink to="usage" smooth={true} duration={350} offset={-80} delay={0} onClick={closeMenu}>Usage</NavLink></li>
+          <li><NavLink to="process" smooth={true} duration={350} offset={-80} delay={0} onClick={closeMenu}>Process</NavLink></li>
+          <li><NavLink to="age-benefits" smooth={true} duration={350} offset={-80} delay={0} onClick={closeMenu}>Benefits</NavLink></li>
+          <li><NavLink to="contact" smooth={true} duration={350} offset={-80} delay={0} onClick={closeMenu}>Contact</NavLink></li>
+          <li><NavLink to="news" smooth={true} duration={350} offset={-80} delay={0} onClick={closeMenu}>News</NavLink></li>
         </NavLinks>
       </Nav>
     </HeaderContainer>
