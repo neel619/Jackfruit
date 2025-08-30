@@ -1,10 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Import your images with correct relative paths
+// Since your images are in src/assets/images, use this path structure:
+import babyImg from '../assets/images/baby.jpg';
+import childImg from '../assets/images/child.jpg';
+import youngPersonImg from '../assets/images/young-person.jpg';
+import adultImg from '../assets/images/adult.jpg';
+import seniorImg from '../assets/images/senior.jpg';
+import pregnantImg from '../assets/images/pregnant.jpg';
+
 const AgeSectionContainer = styled.section`
-  background: var(--light-green);
+  background: #e8f5e9;
   padding: 5rem 0;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 `;
 
 const Container = styled.div`
@@ -14,7 +24,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  color: var(--primary-color);
+  color: #2e7d32;
   font-size: 2.5rem;
   margin-bottom: 3rem;
   position: relative;
@@ -28,127 +38,152 @@ const Title = styled.h2`
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background-color: var(--secondary-color);
+    background-color: #ff9800;
   }
 `;
 
 const Subtitle = styled.p`
   font-size: 1.2rem;
-  color: var(--text-color);
+  color: #555;
   margin-bottom: 3rem;
   opacity: 0.8;
 `;
 
-const AgeGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+const AgeList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   margin: 3rem 0;
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
 `;
 
-const AgeCard = styled.div`
+const AgeItem = styled.div`
+  display: flex;
+  align-items: center;
   background: white;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  border: 5px solid white;
-  position: relative;
   
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  
+  // Alternate layout for even items
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+`;
+const ImageContainer = styled.div`
+  flex: 0 0 40%;
+  min-height: 300px;
+  overflow: hidden;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    min-height: 250px;
+  }
 `;
 
-const AgeIcon = styled.div`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin: 0 auto 1rem;
+const AgeImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  
+  ${AgeItem}:hover & {
+    transform: scale(1.05);
+  }
+`;
+
+const ContentContainer = styled.div`
+  flex: 0 0 60%;
+  padding: 2rem;
+  text-align: left;
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
 `;
 
 const AgeTitle = styled.h3`
-  margin-bottom: 0.75rem;
-  color: var(--primary-color);
-  font-size: 1.3rem;
+  color: #2e7d32;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 `;
 
 const AgeDescription = styled.p`
-  font-size: 0.95rem;
-  color: var(--text-color);
+  color: #555;
   line-height: 1.6;
-  text-align: left;
+  font-size: 1rem;
 `;
 
 function AgeSection() {
   const ageGroups = [
     {
-      icon: "👶",
+      image: babyImg,
       title: "For Babies",
-      description: "Gentle on the tummy and rich in natural fiber, Jackfruit365 can be added to porridges for easy digestion and better gut health."
+      description: "Gentle on the tummy and rich in natural fiber, Jackfruit365 can be added to porridges for easy digestion and better gut health. Our product is specially formulated to be gentle on delicate digestive systems while providing essential nutrients for growth and development."
     },
     {
-      icon: "🧒",
+      image: childImg,
       title: "For Children",
-      description: "A smart way to sneak in fiber and micronutrients without changing taste; supports active growth and immunity."
+      description: "A smart way to sneak in fiber and micronutrients without changing taste; supports active growth and immunity. Jackfruit365 helps meet nutritional needs during critical growth years while promoting healthy eating habits that last a lifetime."
     },
     {
-      icon: "🧑",
+      image: youngPersonImg,
       title: "For Young People",
-      description: "Helps balance carbs in everyday meals, keeps energy steady, and supports fitness goals without cutting out favorite foods."
+      description: "Helps balance carbs in everyday meals, keeps energy steady, and supports fitness goals without cutting out favorite foods. Perfect for students and young professionals who need sustained energy throughout their busy days."
     },
     {
-      icon: "👨‍💼",
+      image: adultImg,
       title: "For Adults",
-      description: "A natural aid for managing blood sugar, weight, and digestive health while enjoying regular rice and rotis."
+      description: "A natural aid for managing blood sugar, weight, and digestive health while enjoying regular rice and rotis. Jackfruit365 fits seamlessly into your existing diet while providing the health benefits you need as you navigate work and family life."
     },
     {
-      icon: "👴",
+      image: seniorImg,
       title: "For Senior Citizens",
-      description: "Improves gut health, helps control diabetes, and supports heart wellness through a low glycemic diet."
+      description: "Improves gut health, helps control diabetes, and supports heart wellness through a low glycemic diet. Our formulation addresses common age-related health concerns while being easy to digest and prepare."
     },
     {
-      icon: "🤰",
+      image: pregnantImg,
       title: "For Pregnant Women",
-      description: "A safe, natural source of fiber that reduces constipation, manages sugar spikes, and supports healthy nutrition."
+      description: "A safe, natural source of fiber that reduces constipation, manages sugar spikes, and supports healthy nutrition for both mother and baby. Provides essential nutrients during this critical time without any artificial additives."
     },
-    {
-      icon: "💪",
-      title: "For Health Conscious People",
-      description: "Perfect add-on to daily meals to cut calories and carbs while boosting fiber and satiety."
-    }
+    
   ];
 
   return (
     <AgeSectionContainer id="age-benefits">
       <Container>
         <Title>Good for Every Age, Perfect for Every Plate</Title>
-        <Subtitle>Discover how Jackfruit365 benefits every stage of life</Subtitle>
+        <Subtitle>Discover how Jackfruit365 benefits every stage of life with our specially formulated products</Subtitle>
         
-        <AgeGrid>
+        <AgeList>
           {ageGroups.map((group, index) => (
-            <AgeCard key={index}>
-              <AgeIcon>{group.icon}</AgeIcon>
-              <AgeTitle>{group.title}</AgeTitle>
-              <AgeDescription>{group.description}</AgeDescription>
-            </AgeCard>
+            <AgeItem key={index}>
+              <ImageContainer>
+                <AgeImage src={group.image} alt={group.title} />
+              </ImageContainer>
+              <ContentContainer>
+                <AgeTitle>{group.title}</AgeTitle>
+                <AgeDescription>{group.description}</AgeDescription>
+              </ContentContainer>
+            </AgeItem>
           ))}
-        </AgeGrid>
+        </AgeList>
       </Container>
     </AgeSectionContainer>
-  );
+  );    
 }
 
 export default AgeSection;
