@@ -1,15 +1,16 @@
 import React from 'react';
-import Header from './components/Header';
-import ProductImage from './components/ProductImage';
-import About from './components/About';
-import Usage from './components/Usage';
-import Process from './components/Process';
-import RecipeCards from './components/RecipeCards';
-import Contact from './components/Contact';
-import SocialFollow from './components/SocialFollow';
-import News from './components/News';
-import Footer from './components/Footer';
-import { GlobalStyle } from './styles/GlobalStyle';
+import Header from './components/Header.jsx';
+import ProductImage from './components/ProductImage.jsx';
+import About from './components/About.jsx';
+import Usage from './components/Usage.jsx';
+import Process from './components/Process.jsx';
+import RecipeCards from './components/RecipeCards.jsx';
+import Contact from './components/Contact.jsx';
+import SocialFollow from './components/SocialFollow.jsx';
+import News from './components/News.jsx';
+import Footer from './components/Footer.jsx';
+import { GlobalStyle } from './styles/GlobalStyle.js';
+import AgeSection from './components/AgeSection.jsx';
 
 function App() {
   return (
@@ -21,10 +22,12 @@ function App() {
         <About />
         <Usage />
         <Process />
+         <AgeSection /> 
         <RecipeCards />
         <Contact />
         <SocialFollow />
         <News />
+        
       </main>
       <Footer />
     </>

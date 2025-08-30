@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-scroll';
 
 const HeaderContainer = styled.header`
-  background: var(--white);
+  background: white;
   position: fixed;
   width: 100%;
   top: 0;
@@ -22,7 +22,7 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled.h1`
-  color: var(--primary-color);
+  color: var(--primary-green);
   font-size: 1.8rem;
   margin: 0;
   font-weight: 800;
@@ -31,14 +31,14 @@ const Logo = styled.h1`
   align-items: center;
   
   span {
-    color: var(--accent-color);
+    color: var(--jackfruit-yellow);
   }
 `;
 
 const LogoIcon = styled.div`
   width: 30px;
   height: 30px;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-green);
   border-radius: 50%;
   margin-right: 8px;
   display: inline-block;
@@ -50,7 +50,7 @@ const MenuButton = styled.button`
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--primary-color);
+  color: var(--primary-green);
   padding: 0.5rem;
   z-index: 1001;
 
@@ -61,7 +61,7 @@ const MenuButton = styled.button`
 
 const NavLinks = styled.ul`
   display: flex;
-  gap: 2rem;
+  gap: 1.8rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -73,22 +73,26 @@ const NavLinks = styled.ul`
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--white);
+    background: white;
     padding: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid var(--light-green);
+    border-top: 1px solid var(--primary-green);
     text-align: center;
     z-index: 1000;
+    gap: 0.5rem;
   }
 `;
 
 const NavLink = styled(Link)`
   cursor: pointer;
   padding: 0.5rem 0.75rem;
-  color: var(--text-color);
+  color: var(--text-dark);
   font-weight: 500;
+  font-size: 0.95rem;
   position: relative;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  text-decoration: none;
   
   &:after {
     content: '';
@@ -97,12 +101,12 @@ const NavLink = styled(Link)`
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-green);
     transition: width 0.3s ease;
   }
   
   &:hover, &.active {
-    color: var(--primary-color);
+    color: var(--primary-green);
     
     &:after {
       width: 100%;
@@ -112,6 +116,7 @@ const NavLink = styled(Link)`
   @media (max-width: 768px) {
     padding: 0.75rem;
     width: 100%;
+    font-size: 1rem;
     
     &:after {
       bottom: 5px;
@@ -147,7 +152,7 @@ function Header() {
   return (
     <HeaderContainer style={{ 
       padding: scrolled ? '0.5rem 0' : '1rem 0',
-      background: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'var(--white)'
+      background: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'white'
     }}>
       <Nav>
         <Logo>
@@ -161,6 +166,7 @@ function Header() {
           <li><NavLink to="about" smooth={true} duration={500} onClick={closeMenu}>About</NavLink></li>
           <li><NavLink to="usage" smooth={true} duration={500} onClick={closeMenu}>Usage</NavLink></li>
           <li><NavLink to="process" smooth={true} duration={500} onClick={closeMenu}>Process</NavLink></li>
+          <li><NavLink to="age-benefits" smooth={true} duration={500} onClick={closeMenu}>Age Benefits</NavLink></li>
           <li><NavLink to="contact" smooth={true} duration={500} onClick={closeMenu}>Contact</NavLink></li>
           <li><NavLink to="news" smooth={true} duration={500} onClick={closeMenu}>News</NavLink></li>
         </NavLinks>
