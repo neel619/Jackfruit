@@ -22,26 +22,35 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled.h1`
-  color: var(--primary-green);
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   margin: 0;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
   display: flex;
   align-items: center;
+  font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
   
-  span {
-    color: var(--jackfruit-yellow);
+  .jackfruit {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #3a6b1f;
+    text-stroke: 1.5px #3a6b1f;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
   }
-`;
-
-const LogoIcon = styled.div`
-  width: 30px;
-  height: 30px;
-  background-color: var(--secondary-green);
-  border-radius: 50%;
-  margin-right: 8px;
-  display: inline-block;
+  
+  .daily {
+    color: #3a6b1f;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.9rem;
+    
+    .jackfruit {
+      -webkit-text-stroke: 1.3px #3a6b1f;
+      text-stroke: 1.3px #3a6b1f;
+    }
+  }
 `;
 
 const MenuButton = styled.button`
@@ -156,8 +165,7 @@ function Header() {
     }}>
       <Nav>
         <Logo>
-          <LogoIcon />
-          Jackfruit<span>Daily</span>
+          <span className="jackfruit">Jackfruit</span><span className="daily">Daily</span>
         </Logo>
         <MenuButton onClick={toggleMenu}>
           {isMenuOpen ? '✕' : '☰'}
