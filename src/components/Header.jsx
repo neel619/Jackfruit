@@ -166,7 +166,7 @@ function Header() {
           <li><NavLink to="about" smooth={true} duration={500} onClick={closeMenu}>About</NavLink></li>
           <li><NavLink to="usage" smooth={true} duration={500} onClick={closeMenu}>Usage</NavLink></li>
           <li><NavLink to="process" smooth={true} duration={500} onClick={closeMenu}>Process</NavLink></li>
-          <li><NavLink to="age-benefits" smooth={true} duration={500} onClick={closeMenu}>Age Benefits</NavLink></li>
+          <li><NavLink to="age-benefits" smooth={true} duration={500} onClick={closeMenu}>Benefits</NavLink></li>
           <li><NavLink to="contact" smooth={true} duration={500} onClick={closeMenu}>Contact</NavLink></li>
           <li><NavLink to="news" smooth={true} duration={500} onClick={closeMenu}>News</NavLink></li>
         </NavLinks>
