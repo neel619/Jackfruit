@@ -132,12 +132,12 @@ function AgeSection() {
     {
       image: babyImg,
       title: "For Babies",
-      description: "Gentle on the tummy and rich in natural fiber, Jackfruit365 can be added to porridges for easy digestion and better gut health. Our product is specially formulated to be gentle on delicate digestive systems while providing essential nutrients for growth and development."
+      description: "Gentle on the tummy and rich in natural fiber, JackfruitDaily can be added to porridges for easy digestion and better gut health. Our product is specially formulated to be gentle on delicate digestive systems while providing essential nutrients for growth and development."
     },
     {
       image: childImg,
       title: "For Children",
-      description: "A smart way to sneak in fiber and micronutrients without changing taste; supports active growth and immunity. Jackfruit365 helps meet nutritional needs during critical growth years while promoting healthy eating habits that last a lifetime."
+      description: "A smart way to sneak in fiber and micronutrients without changing taste; supports active growth and immunity. JackfruitDaily helps meet nutritional needs during critical growth years while promoting healthy eating habits that last a lifetime."
     },
     {
       image: youngPersonImg,
@@ -147,7 +147,7 @@ function AgeSection() {
     {
       image: adultImg,
       title: "For Adults",
-      description: "A natural aid for managing blood sugar, weight, and digestive health while enjoying regular rice and rotis. Jackfruit365 fits seamlessly into your existing diet while providing the health benefits you need as you navigate work and family life."
+      description: "A natural aid for managing blood sugar, weight, and digestive health while enjoying regular rice and rotis. JackfruitDaily fits seamlessly into your existing diet while providing the health benefits you need as you navigate work and family life."
     },
     {
       image: seniorImg,
@@ -166,7 +166,7 @@ function AgeSection() {
     <AgeSectionContainer id="age-benefits">
       <Container>
         <Title>Good for Every Age, Perfect for Every Plate</Title>
-        <Subtitle>Discover how Jackfruit365 benefits every stage of life with our specially formulated products</Subtitle>
+        <Subtitle>Discover how JackfruitDaily benefits every stage of life with our specially formulated products</Subtitle>
         
         <AgeList>
           {ageGroups.map((group, index) => (
